@@ -2,7 +2,9 @@
 
 using System;
 using System.Collections;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 
 public class Algoritmia
 {
@@ -62,7 +64,11 @@ public class Algoritmia
 
    }
 
-
+    /// <summary>
+    /// Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+    /// </summary>
+    /// <param name="inputArray"></param>
+    /// <returns></returns>
     public static int AdjacentElementsProduct(int[] inputArray)
     {
 
@@ -94,6 +100,68 @@ public class Algoritmia
         return mul;
     }
 
+    /// <summary>
+    /// Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n.
+
+    ///A 1-interesting polygon is just a square with a side of length 1. An n-interesting polygon is obtained by 
+    ///taking the n - 1-interesting polygon and appending 1-interesting polygons to its rim, 
+    ///side by side.You can see the 1-, 2-, 3- and 4-interesting polygons in the picture below.
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+   public static int polygon(int n)
+    {
+        //calcula bien, cada n mas grande, se toma el poligono de interes anterior y se agregan mas cuadrados
+        //n*n en teoria calcularia los cuadrados del poligono actual y el segundo termino los adicionales
+        return n * n + (n - 1) * (n - 1);
+    }
+
+
+    /// <summary>
+    /// Ratiorg got statues of different sizes as a present from CodeMaster for his birthday, each statue having an non-negative integer size. 
+    /// Since he likes to make things perfect, he wants to arrange them from smallest to
+    /// largest so that each statue will be bigger than the previous one exactly by 1. 
+    /// He may need some additional statues to be able to accomplish that. 
+    /// Help him figure out the minimum number of additional statues needed.
+    /// 
+    /// Basicamente un array no consecutivo, llenarlo para que sea consecutivo y devolver el numero de push al array
+    /// </summary>
+    /// <param name="statues"></param>
+    /// <returns></returns>
+    public static int arrayconsecutive(int[] statues)
+    {
+        int cont = 0;
+
+        Array.Sort(statues);
+        //no muto el array original
+        var arr_aux = statues;
+
+        //para la primera posicion
+        //if (arr_aux[0] + 1 == arr_aux[1])
+        //{
+        //    //calculo la distancia
+        //   var dist= arr_aux[0] - arr_aux[1] * -1;
+
+        //    cont += dist-1;
+
+        //}
+
+        for(int i = 0; i < statues.Length-1; i++)
+        {
+            if (arr_aux[i] + 1 != arr_aux[i+1])
+            {
+                //calculo la distancia
+                var dist = (arr_aux[i] - arr_aux[i+1]) * -1;
+
+                cont += dist - 1;
+
+            }
+        }
+
+        Console.WriteLine( cont);
+        return cont;
+
+    }
 
 
 
@@ -103,8 +171,11 @@ public class Algoritmia
         //centuryFromYear(2001);
         //palindrome("aabaa");
 
-        int[] inputArray = new int[] {-23, 4, -3, 8, -12} ;
-        
-        AdjacentElementsProduct(inputArray);
+        //int[] inputArray = new int[] {-23, 4, -3, 8, -12} ;
+
+        //AdjacentElementsProduct(inputArray);
+
+        int[] inputArray = new int[] { 6, 2, 3, 8 };
+        arrayconsecutive(inputArray);
     }
 }
