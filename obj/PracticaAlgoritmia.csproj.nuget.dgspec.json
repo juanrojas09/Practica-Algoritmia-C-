@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Juan Pablo\\source\\repos\\AspNetMicroservices\\PracticaAlgoritmia\\PracticaAlgoritmia\\PracticaAlgoritmia.csproj": {}
+    "C:\\Users\\Juan Pablo\\Desktop\\PracticaAlgoritmia\\PracticaAlgoritmia\\PracticaAlgoritmia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Juan Pablo\\source\\repos\\AspNetMicroservices\\PracticaAlgoritmia\\PracticaAlgoritmia\\PracticaAlgoritmia.csproj": {
+    "C:\\Users\\Juan Pablo\\Desktop\\PracticaAlgoritmia\\PracticaAlgoritmia\\PracticaAlgoritmia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Juan Pablo\\source\\repos\\AspNetMicroservices\\PracticaAlgoritmia\\PracticaAlgoritmia\\PracticaAlgoritmia.csproj",
+        "projectUniqueName": "C:\\Users\\Juan Pablo\\Desktop\\PracticaAlgoritmia\\PracticaAlgoritmia\\PracticaAlgoritmia.csproj",
         "projectName": "PracticaAlgoritmia",
-        "projectPath": "C:\\Users\\Juan Pablo\\source\\repos\\AspNetMicroservices\\PracticaAlgoritmia\\PracticaAlgoritmia\\PracticaAlgoritmia.csproj",
+        "projectPath": "C:\\Users\\Juan Pablo\\Desktop\\PracticaAlgoritmia\\PracticaAlgoritmia\\PracticaAlgoritmia.csproj",
         "packagesPath": "C:\\Users\\Juan Pablo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Juan Pablo\\source\\repos\\AspNetMicroservices\\PracticaAlgoritmia\\PracticaAlgoritmia\\obj\\",
+        "outputPath": "C:\\Users\\Juan Pablo\\Desktop\\PracticaAlgoritmia\\PracticaAlgoritmia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"

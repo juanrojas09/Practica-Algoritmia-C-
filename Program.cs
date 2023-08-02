@@ -136,18 +136,10 @@ public class Algoritmia
         //no muto el array original
         var arr_aux = statues;
 
-        //para la primera posicion
-        //if (arr_aux[0] + 1 == arr_aux[1])
-        //{
-        //    //calculo la distancia
-        //   var dist= arr_aux[0] - arr_aux[1] * -1;
-
-        //    cont += dist-1;
-
-        //}
 
         for(int i = 0; i < statues.Length-1; i++)
         {
+            //si es igual es porque son consecutivos una posicion con la siguiente
             if (arr_aux[i] + 1 != arr_aux[i+1])
             {
                 //calculo la distancia
@@ -164,6 +156,127 @@ public class Algoritmia
     }
 
 
+    /*
+     5,3,2,4
+    3,5,2,4
+    3,2,5,4
+    3,2,4,5
+    1era vuelta, ahora el 5 esta en la ultima posicion, no se toma en cuenta
+    ...
+    2da vuelta, ahora el 4 esta en la ultima posicion, no se toma en cuenta
+    3ra vuelta, ahora el 2 esta en la ultima posicion, no se toma en cuenta
+    4ta vuelta, ahora el 3 esta en la ultima posicion, no se toma en cuenta
+     
+     
+     */
+
+    public static int[] BubbleSort(int[] arr)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            for (int j = 0; j < arr.Length - i - 1; j++) //4-0-1=3, 4-1-1=2
+            {
+                if (arr[j] > arr[j + 1])
+                {
+                    var aux = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = aux;
+                }
+            }
+        }
+        Console.WriteLine(arr);
+        return arr;
+    }
+
+    /*
+    * Complete the 'aVeryBigSum' function below.
+    *
+    * The function is expected to return a LONG_INTEGER.
+    * The function accepts LONG_INTEGER_ARRAY ar as parameter.
+    */
+
+    public static long aVeryBigSum(List<long> ar)
+    {
+        long cont = 0;
+        for (int i = 0; i < ar.Count; i++)
+        {
+
+            cont += ar[i];
+        }
+        return cont;
+
+
+    }
+
+
+    public static int diagonalDifference(List<List<int>> arr)
+    {
+        //valor del tam array
+        var n = arr.Count;
+        Console.WriteLine(n);
+
+        int suma_principal = 0;
+        int suma_secundaria = 0;
+
+
+        for (int i = 0; i < n; i++)
+        {
+
+            suma_principal += arr[i][i];
+            //recorro al revez, si es 3x3 seria en la primera
+            //iteracion 3-0-1=2 -->0,1,2 el primer elemento de la derehca
+            suma_secundaria += arr[i][n - i - 1];
+
+
+
+        }
+
+        var suma = suma_principal - suma_secundaria;
+        return Math.Abs(suma);
+
+
+    }
+
+    /// <summary>
+    /// triangulo con espacios
+    /// </summary>
+    /// <param name="n"></param>
+    public static void staircase(int n)
+    {
+        /*
+        triangulo normal
+        for(int i=1;i<=n;i++){
+             string row="";
+            int obj=i*1;
+            
+            for(int j=1;j<=obj;j++){
+               
+                row+="#";
+                
+            }
+            Console.WriteLine(row);
+            
+        }*/
+        for (int i = 1; i <= n; i++)
+        {
+            string row = "";
+
+            // Agregar espacios
+            for (int k = 1; k <= n - i; k++)
+            {
+                row += " ";
+            }
+
+            for (int j = 1; j <= i; j++)
+            {
+
+                row += string.Concat('#');
+
+            }
+            Console.WriteLine(row);
+
+        }
+    }
 
     public static void Main()
     {
@@ -175,7 +288,9 @@ public class Algoritmia
 
         //AdjacentElementsProduct(inputArray);
 
-        int[] inputArray = new int[] { 6, 2, 3, 8 };
-        arrayconsecutive(inputArray);
+        //int[] inputArray = new int[] { 6, 2, 3, 8 };
+        //arrayconsecutive(inputArray);
+        int[] inputArray = new int[] { 2, 6, 8, 5, 4 };
+         BubbleSort(inputArray);
     }
 }
